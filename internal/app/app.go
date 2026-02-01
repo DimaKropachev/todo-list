@@ -30,7 +30,7 @@ func (a *App) Start(ctx context.Context) {
 	repo := repository.New(db.DB)
 	service := service.New(repo)
 	handlers := http.NewHandlers(service)
-	router := http.NewRouter(handlers)
+	router := http.NewRouter(a.cfg.HTTP, handlers)
 	
 	if err := router.Start(); err != nil  {
 		log.Fatal(err)

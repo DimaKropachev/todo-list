@@ -8,11 +8,11 @@ import (
 )
 
 type Config struct {
-	UserName string
-	Password string
-	Host     string
-	Port     int
-	DBName   string
+	UserName string `env:"POSTGRES_USER"`
+	Password string `env:"POSTGRES_PASSWORD"`
+	Host     string `env:"POSTGRES_HOST"`
+	Port     int    `env:"POSTGRES_PORT"`
+	DBName   string `env:"POSTGRES_DB"`
 }
 
 type DataBase struct {

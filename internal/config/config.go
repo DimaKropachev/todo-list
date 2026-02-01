@@ -3,12 +3,14 @@ package config
 import (
 	"fmt"
 
+	"github.com/DimaKropachev/todo-list/internal/transport/http"
 	"github.com/DimaKropachev/todo-list/pkg/db"
 	"github.com/ilyakaznacheev/cleanenv"
 )
 
 type Config struct {
 	DB db.Config 
+	HTTP http.Config
 }
 
 func ParseConfig(path string) (*Config, error) {
