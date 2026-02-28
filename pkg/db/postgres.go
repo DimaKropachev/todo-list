@@ -13,6 +13,7 @@ type Config struct {
 	Host     string `env:"POSTGRES_HOST"`
 	Port     int    `env:"POSTGRES_PORT"`
 	DBName   string `env:"POSTGRES_DB"`
+	SSLMode  string `env:"POSTGRES_SSLMODE"`
 }
 
 type DataBase struct {

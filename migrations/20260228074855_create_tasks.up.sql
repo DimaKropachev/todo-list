@@ -1,0 +1,7 @@
+-- create table
+CREATE TABLE IF NOT EXISTS tasks (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  name TEXT NOT NULL,
+  description TEXT,
+  status TEXT NOT NULL
+);
