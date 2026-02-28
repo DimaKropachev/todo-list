@@ -2,6 +2,7 @@ package http
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 )
 
@@ -32,6 +33,7 @@ func (r *Router) Start() error {
 	mux.HandleFunc("DELETE /task/{id}", r.h.DeleteTask)
 
 	addr := fmt.Sprintf("%s:%d", r.cfg.Host, r.cfg.Port)
+	log.Println("server starting at", addr)
 	if err := http.ListenAndServe(addr, mux); err != nil {
 		return fmt.Errorf("failed starting server: %w", err)
 	}
