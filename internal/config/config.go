@@ -9,7 +9,8 @@ import (
 )
 
 type Config struct {
-	DB db.Config 
+	Env  string `env:"ENVIRONMENT"`
+	DB   db.Config
 	HTTP http.Config
 }
 
