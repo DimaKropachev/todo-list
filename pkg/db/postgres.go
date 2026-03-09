@@ -21,12 +21,13 @@ type DataBase struct {
 }
 
 func New(cfg Config) (*DataBase, error) {
-	connStr := fmt.Sprintf("postrges://%s:%s@%s:%d/%s",
+	connStr := fmt.Sprintf("postrges://%s:%s@%s:%d/%s?sslmode=%s",
 		cfg.UserName,
 		cfg.Password,
 		cfg.Host,
 		cfg.Port,
 		cfg.DBName,
+		cfg.SSLMode,
 	)
 
 	db, err := sql.Open("pgx", connStr)
